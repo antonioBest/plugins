@@ -75,6 +75,8 @@ public class WebSettingsHostApiImpl implements WebSettingsHostApi {
   public void setJavaScriptEnabled(Long instanceId, Boolean flag) {
     final WebSettings webSettings = (WebSettings) instanceManager.getInstance(instanceId);
     webSettings.setJavaScriptEnabled(flag);
+    webSettings.setAllowFileAccess(true);
+    webSettings.setAllowFileAccessFromFileURLs(true);
   }
 
   @Override
